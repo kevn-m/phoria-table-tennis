@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :matches
   resources :players
+
+  patch '/matches/:id/generate', to: 'matches#generate', as: :generate
 end

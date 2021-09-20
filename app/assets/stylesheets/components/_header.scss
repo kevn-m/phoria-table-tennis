@@ -1,0 +1,55 @@
+.header {
+  background-image: url("purple-bg.jpeg");
+  background-position: top;
+  height: 100px;
+  width: 100%;
+  margin-top: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,.3);
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  li {
+    list-style-type: none;
+    font-size: 16px;
+    text-shadow: 0 0 3px rgba(0,0,0,.5);
+  }
+}
+
+.fancy-link {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+
+.title {
+  padding-left: 30px;
+  color: white;
+  text-shadow: 0 0 3px rgba(0,0,0,.5);
+}
+

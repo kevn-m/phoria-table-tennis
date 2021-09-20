@@ -20,4 +20,5 @@
 </p>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
-<%= link_to 'Back', matches_path %>
+<%= link_to 'Back', matches_path %> |
+<%= link_to "Random score", generate_path(@match), class: "button", :method=> :patch %>

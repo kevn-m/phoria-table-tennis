@@ -1,5 +1,5 @@
 class MatchesController < ApplicationController
-  before_action :set_match, only: %i[ show edit update destroy ]
+  before_action :set_match, only: %i[ show edit update destroy generate ]
 
   # GET /matches or /matches.json
   def index
@@ -17,6 +17,16 @@ class MatchesController < ApplicationController
 
   # GET /matches/1/edit
   def edit
+  end
+
+  def generate
+    score_array = [0,0] # create an array for the scores
+    score_array[rand(2)] = 21 # pick a random winner
+    score_array.map! {|num| num == 0 ? num + rand(19) : break } # randomly generate score for other side
+    new_score = score_array.join("-") # turn into string
+
+    @match.update!(score: new_score)
+    redirect_to matches_path
   end
 
   # POST /matches or /matches.json
